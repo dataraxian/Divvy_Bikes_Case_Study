@@ -1,0 +1,7 @@
+__pycache__/
+.env/
+env/
+*.zip
+*.csv
+*.xlsx
+manifest.csv
