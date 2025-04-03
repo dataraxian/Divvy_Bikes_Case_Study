@@ -1,97 +1,82 @@
 # divvy_downloader.py
 
 import os
-import re
-import csv
 import requests
-from bs4 import BeautifulSoup
-from zipfile import ZipFile
-from datetime import datetime
+import zipfile
+import pandas as pd
 from tqdm import tqdm
+from datetime import datetime
 
-# --- Configuration ---
+# Base URL for Divvy data
 BASE_URL = "https://divvy-tripdata.s3.amazonaws.com/"
-INDEX_URL = BASE_URL + "index.html"
-ZIP_DIR = "zip"
-EXTRACT_DIR = "extracted"
-MANIFEST_FILE = "index_manifest.csv"
+DOWNLOAD_DIR = "zip"
+EXTRACT_DIR = "csv"
 
-# --- Ensure folders exist ---
-os.makedirs(ZIP_DIR, exist_ok=True)
-os.makedirs(os.path.join(EXTRACT_DIR, "csv"), exist_ok=True)
-os.makedirs(os.path.join(EXTRACT_DIR, "xlsx"), exist_ok=True)
-os.makedirs(os.path.join(EXTRACT_DIR, "other"), exist_ok=True)
+# List of file names (you may update this to scrape or generate based on metadata)
+file_names = [
+    "202004-divvy-tripdata.zip",
+    "202005-divvy-tripdata.zip",
+    # Add more file names here as needed
+]
 
-# --- Load existing manifest if present ---
-manifest = {}
-if os.path.exists(MANIFEST_FILE):
-    with open(MANIFEST_FILE, newline="") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            manifest[row["file_name"]] = row["date_modified"]
+def download_file(file_url, file_path):
+    """Download a file from a URL."""
+    print(f"Downloading {file_url}...")
+    try:
+        with requests.get(file_url, stream=True) as r:
+            r.raise_for_status()
+            with open(file_path, 'wb') as f:
+                for chunk in r.iter_content(chunk_size=8192): 
+                    f.write(chunk)
+        print(f"Downloaded {file_url}")
+    except Exception as e:
+        print(f"Error downloading {file_url}: {e}")
 
-# --- Download and parse the HTML index ---
-print("Fetching file index...")
-resp = requests.get(INDEX_URL)
-soup = BeautifulSoup(resp.content, "html.parser")
-rows = soup.select("table tr")[1:]  # skip header
-print(f"Found {len(rows)} rows in the HTML table.") # DEBUG
+def extract_zip(file_path, extract_to):
+    """Extract a ZIP file to a specified folder."""
+    print(f"Extracting {file_path}...")
+    try:
+        with zipfile.ZipFile(file_path, 'r') as zip_ref:
+            zip_ref.extractall(extract_to)
+        print(f"Extracted {file_path}")
+    except zipfile.BadZipFile as e:
+        print(f"Error extracting {file_path}: {e}")
 
-# --- Collect updated or new files ---
-to_download = []
-for row in rows:
-    cols = row.find_all("td")
-    if len(cols) < 4:
-        continue
+def process_csv(file_path):
+    """Process the extracted CSV file (example: load into DataFrame)."""
+    print(f"Processing {file_path}...")
+    try:
+        df = pd.read_csv(file_path)
+        # Example: check for missing values or any other necessary processing
+        print(df.head())  # Placeholder: check the first few rows
+    except Exception as e:
+        print(f"Error processing {file_path}: {e}")
 
-    name = cols[0].text.strip()
-    modified = cols[1].text.strip()
-    file_type = cols[3].text.strip().lower()
+def main():
+    """Main function to download, extract, and process the files."""
+    # Ensure the directories exist
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+    os.makedirs(EXTRACT_DIR, exist_ok=True)
+    
+    # Loop through each file, download, extract, and process
+    for file_name in file_names:
+        file_url = BASE_URL + file_name
+        download_path = os.path.join(DOWNLOAD_DIR, file_name)
+        
+        # Check if file already exists and download if not
+        if not os.path.exists(download_path):
+            download_file(file_url, download_path)
+        
+        # Extract ZIP
+        extract_path = os.path.join(EXTRACT_DIR, file_name.replace('.zip', ''))
+        if not os.path.exists(extract_path):  # Extract only if not already extracted
+            os.makedirs(extract_path, exist_ok=True)
+            extract_zip(download_path, extract_path)
 
-    if not name.endswith(".zip") or file_type != "zip file":
-        continue
+        # Process the extracted CSV
+        csv_file_path = os.path.join(extract_path, file_name.replace('.zip', '.csv'))
+        if os.path.exists(csv_file_path):
+            process_csv(csv_file_path)
 
-    # Standardize datetime
-    modified_dt = datetime.strptime(re.sub(r"(\d{1,2})(st|nd|rd|th)", r"\1", modified), "%m/%d/%Y %I:%M:%S %p")
-    modified_str = modified_dt.isoformat()
-
-    # Compare with manifest
-    if name not in manifest or manifest[name] != modified_str:
-        to_download.append((name, modified_str))
-
-print(f"{len(to_download)} new or updated files found.")
-
-# --- Download and extract updated files ---
-for name, modified_str in tqdm(to_download, desc="Downloading"):
-    url = BASE_URL + name
-    zip_path = os.path.join(ZIP_DIR, name)
-
-    with requests.get(url, stream=True) as r:
-        r.raise_for_status()
-        with open(zip_path, "wb") as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                f.write(chunk)
-
-    with ZipFile(zip_path, 'r') as zip_ref:
-        for member in zip_ref.namelist():
-            member_lower = member.lower()
-            if member_lower.endswith(".csv"):
-                dest_folder = os.path.join(EXTRACT_DIR, "csv")
-            elif member_lower.endswith(".xlsx"):
-                dest_folder = os.path.join(EXTRACT_DIR, "xlsx")
-            else:
-                dest_folder = os.path.join(EXTRACT_DIR, "other")
-
-            zip_ref.extract(member, dest_folder)
-
-    # Update manifest
-    manifest[name] = modified_str
-
-# --- Save manifest ---
-with open(MANIFEST_FILE, "w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=["file_name", "date_modified"])
-    writer.writeheader()
-    for file, date in sorted(manifest.items()):
-        writer.writerow({"file_name": file, "date_modified": date})
-
-print("✅ Done: All new/updated ZIPs downloaded, extracted, and tracked.")
+if __name__ == "__main__":
+    main()
