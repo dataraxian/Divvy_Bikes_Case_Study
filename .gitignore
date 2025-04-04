@@ -5,3 +5,5 @@ env/
 *.csv
 *.xlsx
 manifest.csv
+.divvy-user_s3-access*
+.archive/
