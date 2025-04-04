@@ -1,0 +1,27 @@
+project-root/
+├── s3_divvy/                        # Core business logic
+│   ├── __init__.py
+│   ├── config.py                   # Configs & constants (env or defaults)
+│   ├── core.py                     # All primary functions (S3, download, process)
+│   ├── metadata.py                 # Handle metadata logic (diffs, saving/loading)
+│   └── processing.py              # Data transformation logic (DuckDB etc)
+│
+├── scripts/
+│   └── run_pipeline.py            # CLI entrypoint
+│
+├── data/
+│   ├── zip/                       # Raw files
+│   ├── csv/                       # Extracted CSVs
+│   └── hash/                      # SHA256 logs for reproducibility
+│
+├── metadata/
+│   └── file_metadata.csv         # Full metadata state
+│
+├── tests/
+│   ├── test_core.py
+│   ├── test_processing.py
+│   └── conftest.py
+│
+├── requirements.txt
+├── requirements-dev.txt
+└── README.md
