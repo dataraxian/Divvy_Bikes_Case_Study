@@ -7,3 +7,4 @@ env/
 manifest.csv
 .divvy-user_s3-access*
 .archive/
+git_commit_messages/

@@ -6,7 +6,11 @@ from s3_divvy.config import EXTRACT_DIR
 
 logging.basicConfig(level=logging.INFO)
 
-def run():
+def run(mode="duckdb"):
+    if mode == "bulk":
+        processing.process_csv_file("", mode="bulk")
+        return
+
     current_df = core.list_s3_files()
     if current_df.empty:
         logging.info("No files to process.")
@@ -28,7 +32,7 @@ def run():
 
         csv_file_name = file_name.replace(".zip", ".csv")
         csv_path = os.path.join(extract_path, csv_file_name)
-        processing.process_csv_file(csv_path)
+        processing.process_csv_file(csv_path, mode=mode)
 
     metadata.save_metadata(current_df)
 
