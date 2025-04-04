@@ -1,0 +1,13 @@
+name: s3-divvy
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pandas
+  - boto3
+  - duckdb
+  - pip
+  - pip:
+    - pytest
+    - pytest-mock
+    - moto
