@@ -1,6 +1,9 @@
-pytest
-pytest-mock
-moto
-pandas
-boto3
-duckdb
+# Dev and test dependencies
+pytest>=8.0
+pytest-mock>=3.12
+moto==4.1.13  # Required for legacy mock_s3 compatibility
+
+# Core project runtime (mirrored from environment.yml for pip installs)
+pandas>=2.0
+boto3>=1.28
+duckdb>=0.9

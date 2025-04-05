@@ -21,9 +21,12 @@ def process_csv_file(file_path: str, mode: str = "pandas"):
             con.execute(f"CREATE OR REPLACE TABLE {table_name} AS SELECT * FROM read_csv_auto('{file_path}')")
             logger.info(f"Raw table created: {table_name}")
 
-            # Append to unified 'trips' table with a source_file column
-            con.execute(f"CREATE TABLE IF NOT EXISTS trips AS SELECT * FROM {table_name} LIMIT 0")
+            # Create unified trips table (if not exists)
+            con.execute(f"CREATE TABLE IF NOT EXISTS trips AS SELECT *, '{base_name}' AS source_file FROM {table_name} LIMIT 0")
+
+            # Append new data with explicit source_file column
             con.execute(f"INSERT INTO trips SELECT *, '{base_name}' AS source_file FROM {table_name}")
+
             con.close()
             logger.info(f"Appended data to 'trips' table from: {file_path}")
             return True

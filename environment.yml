@@ -10,4 +10,4 @@ dependencies:
   - pip:
     - pytest
     - pytest-mock
-    - moto
+    - moto==4.1.13
