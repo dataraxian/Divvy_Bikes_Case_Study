@@ -9,3 +9,4 @@ manifest.csv
 .archive/
 git_commit_messages/
 data/
+.DS_Store
