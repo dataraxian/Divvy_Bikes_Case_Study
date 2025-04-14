@@ -1,3 +1,4 @@
+### test_core.py
 import os
 import hashlib
 import tempfile
@@ -13,8 +14,8 @@ def dummy_s3_bucket():
         bucket = "test-bucket"
         s3 = boto3.client("s3", region_name="us-east-1")
         s3.create_bucket(Bucket=bucket)
-        s3.put_object(Bucket=bucket, Key="a.csv", Body="data-a", ContentLength=6)
-        s3.put_object(Bucket=bucket, Key="b.csv", Body="data-b", ContentLength=6)
+        s3.put_object(Bucket=bucket, Key="a.zip", Body="data-a", ContentLength=6)
+        s3.put_object(Bucket=bucket, Key="b.zip", Body="data-b", ContentLength=6)
         yield bucket
 
 
@@ -22,7 +23,7 @@ def test_list_s3_files(monkeypatch, dummy_s3_bucket):
     monkeypatch.setattr(core, "S3_BUCKET", dummy_s3_bucket)
     df = core.list_s3_files()
     assert isinstance(df, pd.DataFrame)
-    assert set(df["file_name"]) == {"a.csv", "b.csv"}
+    assert set(df["file_name"]) == {"a.zip", "b.zip"}
 
 
 def test_save_file_hash(tmp_path):

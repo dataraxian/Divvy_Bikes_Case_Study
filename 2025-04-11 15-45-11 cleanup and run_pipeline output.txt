@@ -1,0 +1,554 @@
+(s3-divvy) PS U:\Divvy_Bikes_Case_Study> python -m cleanup             
+
+🧹 Cleaning up generated files...
+🗑️  Removed directory: data/zip
+🗑️  Removed directory: data/csv
+🗑️  Removed directory: data/hash
+⚠️  Skipped (not found): metadata/file_metadata.csv
+🗑️  Removed file: data/divvy.duckdb
+
+✅ Cleanup complete.
+
+(s3-divvy) PS U:\Divvy_Bikes_Case_Study> python -m scripts.run_pipeline
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202004-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202004-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202004-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202004-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202004-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202004-divvy-tripdata\202004-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202004_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 84776 of 84776 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202004-divvy-tripdata\202004-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202005-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202005-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202005-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202005-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202005-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202005-divvy-tripdata\202005-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202005_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 200274 of 200274 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202005-divvy-tripdata\202005-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202006-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202006-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202006-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202006-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202006-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202006-divvy-tripdata\202006-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202006_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 343005 of 343005 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202006-divvy-tripdata\202006-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202007-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202007-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202007-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202007-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202007-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202007-divvy-tripdata\202007-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202007_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 551480 of 551480 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202007-divvy-tripdata\202007-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202008-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202008-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202008-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202008-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202008-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202008-divvy-tripdata\202008-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202008_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 622361 of 622361 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202008-divvy-tripdata\202008-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202009-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202009-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202009-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202009-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202009-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202009-divvy-tripdata\202009-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202009_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 532958 of 532958 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202009-divvy-tripdata\202009-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202010-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202010-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202010-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202010-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202010-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202010-divvy-tripdata\202010-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202010_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 388653 of 388653 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202010-divvy-tripdata\202010-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202011-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202011-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202011-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202011-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202011-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202011-divvy-tripdata\202011-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202011_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 259716 of 259716 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202011-divvy-tripdata\202011-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202012-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202012-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202012-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202012-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202012-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202012-divvy-tripdata\202012-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202012_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 131573 of 131573 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202012-divvy-tripdata\202012-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202101-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202101-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202101-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202101-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202101-divvy-tripdata.zip.sha256    
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202101-divvy-tripdata\202101-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202101_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 96834 of 96834 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202101-divvy-tripdata\202101-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202102-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202102-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202102-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202102-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202102-divvy-tripdata.zip.sha256    
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202102-divvy-tripdata\202102-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202102_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 49622 of 49622 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202102-divvy-tripdata\202102-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202103-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202103-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202103-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202103-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202103-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202103-divvy-tripdata\202103-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202103_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 228496 of 228496 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202103-divvy-tripdata\202103-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202104-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202104-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202104-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202104-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202104-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202104-divvy-tripdata\202104-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202104_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 337230 of 337230 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202104-divvy-tripdata\202104-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202105-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202105-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202105-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202105-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202105-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202105-divvy-tripdata\202105-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202105_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 531633 of 531633 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202105-divvy-tripdata\202105-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202106-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202106-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202106-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202106-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202106-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202106-divvy-tripdata\202106-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202106_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 729595 of 729595 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202106-divvy-tripdata\202106-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202107-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202107-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202107-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202107-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202107-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202107-divvy-tripdata\202107-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202107_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 822410 of 822410 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202107-divvy-tripdata\202107-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202108-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202108-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202108-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202108-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202108-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202108-divvy-tripdata\202108-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202108_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 804352 of 804352 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202108-divvy-tripdata\202108-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202109-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202109-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202109-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202109-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202109-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202109-divvy-tripdata\202109-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202109_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 756147 of 756147 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202109-divvy-tripdata\202109-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202110-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202110-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202110-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202110-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202110-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202110-divvy-tripdata\202110-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202110_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 631226 of 631226 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202110-divvy-tripdata\202110-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202111-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202111-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202111-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202111-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202111-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202111-divvy-tripdata\202111-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202111_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 359978 of 359978 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202111-divvy-tripdata\202111-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202112-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202112-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202112-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202112-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202112-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202112-divvy-tripdata\202112-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202112_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 247540 of 247540 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202112-divvy-tripdata\202112-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202201-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202201-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202201-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202201-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202201-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202201-divvy-tripdata\202201-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202201_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 103770 of 103770 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202201-divvy-tripdata\202201-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202202-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202202-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202202-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202202-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202202-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202202-divvy-tripdata\202202-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202202_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 115609 of 115609 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202202-divvy-tripdata\202202-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202203-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202203-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202203-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202203-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202203-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202203-divvy-tripdata\202203-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202203_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 284042 of 284042 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202203-divvy-tripdata\202203-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202204-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202204-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202204-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202204-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202204-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202204-divvy-tripdata\202204-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202204_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 371249 of 371249 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202204-divvy-tripdata\202204-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202205-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202205-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202205-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202205-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202205-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202205-divvy-tripdata\202205-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202205_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 634858 of 634858 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202205-divvy-tripdata\202205-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202206-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202206-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202206-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202206-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202206-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202206-divvy-tripdata\202206-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202206_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 769204 of 769204 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202206-divvy-tripdata\202206-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202207-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202207-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202207-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202207-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202207-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202207-divvy-tripdata\202207-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202207_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 823488 of 823488 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202207-divvy-tripdata\202207-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202208-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202208-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202208-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202208-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202208-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202208-divvy-tripdata\202208-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202208_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 785932 of 785932 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202208-divvy-tripdata\202208-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202209-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202209-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202209-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202209-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202209-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202209-divvy-tripdata\202209-divvy-tripdata.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202209-divvy-tripdata\202209-divvy-tripdata.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202209-divvy-tripdata\202209-divvy-tripdata.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202210-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202210-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202210-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202210-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202210-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202210-divvy-tripdata\202210-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202210_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 558685 of 558685 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202210-divvy-tripdata\202210-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202211-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202211-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202211-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202211-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202211-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202211-divvy-tripdata\202211-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202211_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 337735 of 337735 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202211-divvy-tripdata\202211-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202212-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202212-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202212-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202212-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202212-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202212-divvy-tripdata\202212-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202212_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 181806 of 181806 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202212-divvy-tripdata\202212-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202301-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202301-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202301-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202301-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202301-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202301-divvy-tripdata\202301-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202301_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 190301 of 190301 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202301-divvy-tripdata\202301-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202302-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202302-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202302-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202302-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202302-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202302-divvy-tripdata\202302-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202302_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 190445 of 190445 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202302-divvy-tripdata\202302-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202303-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202303-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202303-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202303-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202303-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202303-divvy-tripdata\202303-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202303_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 258678 of 258678 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202303-divvy-tripdata\202303-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202304-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202304-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202304-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202304-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202304-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202304-divvy-tripdata\202304-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202304_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 426590 of 426590 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202304-divvy-tripdata\202304-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202305-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202305-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202305-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202305-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202305-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202305-divvy-tripdata\202305-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202305_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 604827 of 604827 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202305-divvy-tripdata\202305-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202306-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202306-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202306-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202306-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202306-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202306-divvy-tripdata\202306-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202306_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 719618 of 719618 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202306-divvy-tripdata\202306-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202307-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202307-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202307-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202307-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202307-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202307-divvy-tripdata\202307-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202307_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 767650 of 767650 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202307-divvy-tripdata\202307-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202308-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202308-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202308-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202308-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202308-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202308-divvy-tripdata\202308-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202308_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 771693 of 771693 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202308-divvy-tripdata\202308-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202309-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202309-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202309-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202309-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202309-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202309-divvy-tripdata\202309-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202309_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 666371 of 666371 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202309-divvy-tripdata\202309-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202310-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202310-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202310-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202310-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202310-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202310-divvy-tripdata\202310-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202310_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 537113 of 537113 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202310-divvy-tripdata\202310-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202311-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202311-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202311-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202311-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202311-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202311-divvy-tripdata\202311-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202311_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 362518 of 362518 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202311-divvy-tripdata\202311-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202312-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202312-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202312-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202312-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202312-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202312-divvy-tripdata\202312-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202312_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 224073 of 224073 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202312-divvy-tripdata\202312-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202401-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202401-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202401-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202401-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202401-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202401-divvy-tripdata\202401-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202401_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 144873 of 144873 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202401-divvy-tripdata\202401-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202402-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202402-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202402-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202402-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202402-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202402-divvy-tripdata\202402-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202402_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 223164 of 223164 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202402-divvy-tripdata\202402-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202403-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202403-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202403-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202403-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202403-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202403-divvy-tripdata\202403-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202403_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 301687 of 301687 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202403-divvy-tripdata\202403-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202404-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202404-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202404-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202404-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202404-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202404-divvy-tripdata\202404-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202404_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 415025 of 415025 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202404-divvy-tripdata\202404-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202405-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202405-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202405-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202405-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202405-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202405-divvy-tripdata\202405-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202405_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 609493 of 609493 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202405-divvy-tripdata\202405-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202406-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202406-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202406-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202406-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202406-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202406-divvy-tripdata\202406-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202406_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 710721 of 710721 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202406-divvy-tripdata\202406-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202407-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202407-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202407-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202407-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202407-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202407-divvy-tripdata\202407-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202407_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 748962 of 748962 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202407-divvy-tripdata\202407-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202408-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202408-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202408-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202408-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202408-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202408-divvy-tripdata\202408-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202408_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 755639 of 755639 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202408-divvy-tripdata\202408-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202409-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202409-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202409-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202409-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202409-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202409-divvy-tripdata\202409-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202409_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 821276 of 821276 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202409-divvy-tripdata\202409-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202410-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202410-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202410-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202410-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202410-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202410-divvy-tripdata\202410-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202410_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 616281 of 616281 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202410-divvy-tripdata\202410-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202411-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202411-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202411-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202411-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202411-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202411-divvy-tripdata\202411-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202411_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 335075 of 335075 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202411-divvy-tripdata\202411-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202412-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202412-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202412-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202412-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202412-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202412-divvy-tripdata\202412-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202412_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 178372 of 178372 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202412-divvy-tripdata\202412-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202501-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202501-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202501-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202501-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202501-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202501-divvy-tripdata\202501-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202501_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 138689 of 138689 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202501-divvy-tripdata\202501-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202502-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202502-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202502-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202502-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202502-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202502-divvy-tripdata\202502-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202502_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 151880 of 151880 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202502-divvy-tripdata\202502-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/202503-divvy-tripdata.zip
+INFO:s3_divvy.core:Downloaded: 202503-divvy-tripdata.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\202503-divvy-tripdata.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202503-divvy-tripdata
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\202503-divvy-tripdata.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202503-divvy-tripdata\202503-divvy-tripdata.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_202503_divvy_tripdata
+INFO:s3_divvy.processing:Inserted 298155 of 298155 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\202503-divvy-tripdata\202503-divvy-tripdata.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Stations_Trips_2013.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Stations_Trips_2013.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Stations_Trips_2013.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2013
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Stations_Trips_2013.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2013\Divvy_Stations_Trips_2013.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2013\Divvy_Stations_Trips_2013.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2013\Divvy_Stations_Trips_2013.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Stations_Trips_2014_Q1Q2.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Stations_Trips_2014_Q1Q2.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Stations_Trips_2014_Q1Q2.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q1Q2
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Stations_Trips_2014_Q1Q2.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q1Q2\Divvy_Stations_Trips_2014_Q1Q2.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q1Q2\Divvy_Stations_Trips_2014_Q1Q2.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q1Q2\Divvy_Stations_Trips_2014_Q1Q2.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Stations_Trips_2014_Q3Q4.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Stations_Trips_2014_Q3Q4.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Stations_Trips_2014_Q3Q4.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q3Q4
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Stations_Trips_2014_Q3Q4.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q3Q4\Divvy_Stations_Trips_2014_Q3Q4.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q3Q4\Divvy_Stations_Trips_2014_Q3Q4.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Stations_Trips_2014_Q3Q4\Divvy_Stations_Trips_2014_Q3Q4.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2015-Q1Q2.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2015-Q1Q2.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2015-Q1Q2.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015-Q1Q2
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2015-Q1Q2.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015-Q1Q2\Divvy_Trips_2015-Q1Q2.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015-Q1Q2\Divvy_Trips_2015-Q1Q2.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015-Q1Q2\Divvy_Trips_2015-Q1Q2.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2015_Q3Q4.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2015_Q3Q4.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2015_Q3Q4.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015_Q3Q4
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2015_Q3Q4.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015_Q3Q4\Divvy_Trips_2015_Q3Q4.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015_Q3Q4\Divvy_Trips_2015_Q3Q4.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2015_Q3Q4\Divvy_Trips_2015_Q3Q4.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2016_Q1Q2.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2016_Q1Q2.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2016_Q1Q2.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q1Q2
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2016_Q1Q2.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q1Q2\Divvy_Trips_2016_Q1Q2.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q1Q2\Divvy_Trips_2016_Q1Q2.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q1Q2\Divvy_Trips_2016_Q1Q2.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2016_Q3Q4.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2016_Q3Q4.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2016_Q3Q4.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q3Q4
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2016_Q3Q4.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q3Q4\Divvy_Trips_2016_Q3Q4.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q3Q4\Divvy_Trips_2016_Q3Q4.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2016_Q3Q4\Divvy_Trips_2016_Q3Q4.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2017_Q1Q2.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2017_Q1Q2.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2017_Q1Q2.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q1Q2
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2017_Q1Q2.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q1Q2\Divvy_Trips_2017_Q1Q2.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q1Q2\Divvy_Trips_2017_Q1Q2.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q1Q2\Divvy_Trips_2017_Q1Q2.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2017_Q3Q4.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2017_Q3Q4.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2017_Q3Q4.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q3Q4
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2017_Q3Q4.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q3Q4\Divvy_Trips_2017_Q3Q4.csv with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q3Q4\Divvy_Trips_2017_Q3Q4.csv: IO Error: No files found that match the pattern "U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2017_Q3Q4\Divvy_Trips_2017_Q3Q4.csv"
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2018_Q1.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2018_Q1.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2018_Q1.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q1
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2018_Q1.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q1\Divvy_Trips_2018_Q1.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2018_Q1
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q1\Divvy_Trips_2018_Q1.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2018_Q2.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2018_Q2.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2018_Q2.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q2
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2018_Q2.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q2\Divvy_Trips_2018_Q2.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2018_Q2
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q2\Divvy_Trips_2018_Q2.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2018_Q3.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2018_Q3.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2018_Q3.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q3
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2018_Q3.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q3\Divvy_Trips_2018_Q3.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2018_Q3
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q3\Divvy_Trips_2018_Q3.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2018_Q4.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2018_Q4.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2018_Q4.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q4
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2018_Q4.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q4\Divvy_Trips_2018_Q4.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2018_Q4
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2018_Q4\Divvy_Trips_2018_Q4.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2019_Q1.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2019_Q1.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2019_Q1.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q1
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2019_Q1.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q1\Divvy_Trips_2019_Q1.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2019_Q1
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q1\Divvy_Trips_2019_Q1.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2019_Q2.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2019_Q2.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2019_Q2.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q2
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2019_Q2.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q2\Divvy_Trips_2019_Q2.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2019_Q2
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q2\Divvy_Trips_2019_Q2.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2019_Q3.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2019_Q3.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2019_Q3.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q3
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2019_Q3.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q3\Divvy_Trips_2019_Q3.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2019_Q3
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q3\Divvy_Trips_2019_Q3.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2019_Q4.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2019_Q4.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2019_Q4.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q4
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2019_Q4.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q4\Divvy_Trips_2019_Q4.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2019_Q4
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2019_Q4\Divvy_Trips_2019_Q4.csv: Binder Error: table trips has 14 columns but 13 values were supplied
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2020_Q1.zip
+INFO:s3_divvy.core:Downloaded: Divvy_Trips_2020_Q1.zip
+INFO:s3_divvy.core:Extracted U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\Divvy_Trips_2020_Q1.zip to U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2020_Q1
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\Divvy_Trips_2020_Q1.zip.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2020_Q1\Divvy_Trips_2020_Q1.csv with mode: duckdb
+INFO:s3_divvy.processing:Raw table created: t_Divvy_Trips_2020_Q1
+INFO:s3_divvy.processing:Inserted 426887 of 426887 rows from: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\Divvy_Trips_2020_Q1\Divvy_Trips_2020_Q1.csv
+INFO:s3_divvy.core:Downloading https://divvy-tripdata.s3.amazonaws.com/index.html
+INFO:s3_divvy.core:Downloaded: index.html
+ERROR:s3_divvy.core:Failed to extract U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\zip\index.html: File is not a zip file
+INFO:s3_divvy.core:Hash saved: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\hash\index.html.sha256
+INFO:s3_divvy.processing:Processing file: U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\index.html\index.html with mode: duckdb
+ERROR:s3_divvy.processing:Failed to process CSV U:\Divvy_Bikes_Case_Study\s3_divvy\..\data\csv\index.html\index.html: Catalog Error: Schema with name t_index does not exist!

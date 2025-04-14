@@ -21,3 +21,6 @@ METADATA_PATH = os.path.join(BASE_DIR, "..", "metadata", "file_metadata.csv")
 # Create directories if not present
 for directory in [DOWNLOAD_DIR, EXTRACT_DIR, HASH_DIR, os.path.dirname(METADATA_PATH)]:
     os.makedirs(directory, exist_ok=True)
+
+# MODE
+QUALITY_CHECK_MODE = os.getenv("QUALITY_CHECK_MODE", "false").lower() == "true"

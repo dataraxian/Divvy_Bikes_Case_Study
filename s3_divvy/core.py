@@ -27,6 +27,7 @@ def list_s3_files():
                 "last_modified": obj["LastModified"].isoformat()
             }
             for obj in response["Contents"]
+            if obj["Key"].endswith(".zip")  # Only include .zip files
         ]
         return pd.DataFrame(data)
     except NoCredentialsError:
@@ -74,3 +75,4 @@ def save_file_hash(file_path: str):
     with open(hash_path, 'w') as hash_file:
         hash_file.write(sha256.hexdigest())
     logger.info(f"Hash saved: {hash_path}")
+    
