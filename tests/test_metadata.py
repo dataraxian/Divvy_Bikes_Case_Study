@@ -5,8 +5,8 @@ from s3_divvy import metadata
 
 def test_load_metadata_empty(tmp_path):
     # Simulate no existing metadata file
-    original_path = metadata.METADATA_PATH
-    metadata.METADATA_PATH = tmp_path / "nonexistent.csv"
+    original_path = metadata.config.METADATA_PATH
+    metadata.config.METADATA_PATH = tmp_path / "nonexistent.csv"
 
     df = metadata.load_metadata()
     assert df.empty

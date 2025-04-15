@@ -20,18 +20,18 @@ def sample_metadata(tmp_path):
 
 def test_pipeline_runs(monkeypatch, tmp_path, sample_metadata):
     # Patch config paths
-    monkeypatch.setattr(metadata, "METADATA_PATH", str(sample_metadata))
-    monkeypatch.setattr(core, "DOWNLOAD_DIR", str(tmp_path / "zip"))
-    monkeypatch.setattr(core, "EXTRACT_DIR", str(tmp_path / "csv"))
-    monkeypatch.setattr(core, "HASH_DIR", str(tmp_path / "hash"))
+    monkeypatch.setattr(metadata.config, "METADATA_PATH", str(sample_metadata))
+    monkeypatch.setattr(core.config, "DOWNLOAD_DIR", str(tmp_path / "zip"))
+    monkeypatch.setattr(core.config, "EXTRACT_DIR", str(tmp_path / "csv"))
+    monkeypatch.setattr(core.config, "HASH_DIR", str(tmp_path / "hash"))
 
     # Force log path to temp dir
     log_path = tmp_path / "file_ingestion_log.csv"
-    monkeypatch.setattr("s3_divvy.config.INGESTION_LOG_PATH", str(log_path))
+    monkeypatch.setattr(ingestion_log.config, "INGESTION_LOG_PATH", str(log_path))
 
     # Simulate listing files in S3
     monkeypatch.setattr(core, "list_s3_files", lambda: pd.DataFrame({
-        "file_name": ["dummy.csv"],
+        "file_name": ["dummy.zip"],
         "size": [1234],
         "last_modified": pd.to_datetime(["2024-02-01"])
     }))

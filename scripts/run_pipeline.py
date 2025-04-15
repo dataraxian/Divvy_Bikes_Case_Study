@@ -5,8 +5,7 @@ import argparse
 from datetime import datetime, timezone
 import duckdb
 
-from s3_divvy import core, metadata, processing, ingestion_log
-from . import config
+from s3_divvy import core, metadata, processing, ingestion_log, config
 # from s3_divvy.config import EXTRACT_DIR, QUALITY_CHECK_MODE, DUCKDB_PATH
 
 logging.basicConfig(level=logging.INFO)

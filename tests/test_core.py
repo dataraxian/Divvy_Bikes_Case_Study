@@ -20,17 +20,17 @@ def dummy_s3_bucket():
 
 
 def test_list_s3_files(monkeypatch, dummy_s3_bucket):
-    monkeypatch.setattr(core, "S3_BUCKET", dummy_s3_bucket)
+    monkeypatch.setattr(core.config, "S3_BUCKET", dummy_s3_bucket)
     df = core.list_s3_files()
     assert isinstance(df, pd.DataFrame)
     assert set(df["file_name"]) == {"a.zip", "b.zip"}
 
 
-def test_save_file_hash(tmp_path):
+def test_save_file_hash(tmp_path, monkeypatch):
     file_path = tmp_path / "test.txt"
     file_path.write_text("hello world")
 
-    core.HASH_DIR = str(tmp_path)
+    monkeypatch.setattr(core.config, "HASH_DIR", str(tmp_path))
     core.save_file_hash(str(file_path))
 
     hash_path = tmp_path / "test.txt.sha256"
