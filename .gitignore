@@ -10,3 +10,4 @@ manifest.csv
 git_commit_messages/
 data/
 .DS_Store
+logs/

@@ -1,9 +1,14 @@
-# Dev and test dependencies
-pytest>=8.0
-pytest-mock>=3.12
-moto==4.1.13  # Required for legacy mock_s3 compatibility
+# requirements-dev.txt
 
-# Core project runtime (mirrored from environment.yml for pip installs)
-pandas>=2.0
-boto3>=1.28
-duckdb>=0.9
+# ✅ Pull in runtime dependencies
+-r requirements.txt
+
+# 🧪 Testing + dev tools
+coverage==7.8.0
+pytest==8.3.5
+pytest-cov==6.1.1
+pytest-mock==3.14.0
+moto==4.1.13
+Werkzeug==3.1.3
+responses==0.25.7
+xmltodict==0.14.2
