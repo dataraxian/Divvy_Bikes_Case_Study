@@ -3,6 +3,7 @@ import os
 import csv
 from datetime import datetime
 from . import config
+# from .config import INGESTION_LOG_PATH
 
 # Ensure header is always consistent
 FIELDNAMES = [
@@ -12,9 +13,9 @@ FIELDNAMES = [
 ]
 
 def log_ingestion_entry(entry: dict):
-    log_path = config.INGESTION_LOG_PATH  # ✅ dynamically access current value
+    log_path = config.INGESTION_LOG_PATH
     is_new_file = not os.path.exists(log_path)
-    
+
     with open(log_path, "a", newline="") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=FIELDNAMES)
 

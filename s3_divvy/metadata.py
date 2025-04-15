@@ -2,12 +2,14 @@
 import os
 import pandas as pd
 from datetime import datetime
-from .config import METADATA_PATH
+from . import config
+# from .config import METADATA_PATH
+
 
 def load_metadata():
-    if os.path.exists(METADATA_PATH):
+    if os.path.exists(config.METADATA_PATH):
         try:
-            df = pd.read_csv(METADATA_PATH, parse_dates=["last_modified"])
+            df = pd.read_csv(config.METADATA_PATH, parse_dates=["last_modified"])
             return df
         except Exception as e:
             print(f"Error loading metadata: {e}")
@@ -15,7 +17,7 @@ def load_metadata():
 
 def save_metadata(df: pd.DataFrame):
     try:
-        df.to_csv(METADATA_PATH, index=False)
+        df.to_csv(config.METADATA_PATH, index=False)
     except Exception as e:
         print(f"Error saving metadata: {e}")
 

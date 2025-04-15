@@ -4,17 +4,15 @@ import csv
 import pytest
 from datetime import datetime, timezone
 from s3_divvy import ingestion_log
-from s3_divvy.config import INGESTION_LOG_PATH
 
-@pytest.fixture(autouse=True)
-def clean_log():
-    if os.path.exists(INGESTION_LOG_PATH):
-        os.remove(INGESTION_LOG_PATH)
-    yield
-    if os.path.exists(INGESTION_LOG_PATH):
-        os.remove(INGESTION_LOG_PATH)
+@pytest.fixture
+def temp_log_path(tmp_path):
+    original_path = ingestion_log.config.INGESTION_LOG_PATH
+    ingestion_log.config.INGESTION_LOG_PATH = tmp_path / "temp_log.csv"
+    yield ingestion_log.config.INGESTION_LOG_PATH
+    ingestion_log.config.INGESTION_LOG_PATH = original_path
 
-def test_log_file_created_and_entry_appended():
+def test_log_file_created_and_entry_appended(temp_log_path):
     now = datetime.now(timezone.utc)
     entry = ingestion_log.create_log_entry(
         file_name="202301-divvy.csv",
@@ -28,9 +26,9 @@ def test_log_file_created_and_entry_appended():
     )
     ingestion_log.log_ingestion_entry(entry)
 
-    assert os.path.exists(INGESTION_LOG_PATH)
+    assert os.path.exists(temp_log_path)
 
-    with open(INGESTION_LOG_PATH, newline="") as f:
+    with open(temp_log_path, newline="") as f:
         reader = list(csv.DictReader(f))
         assert len(reader) == 1
         row = reader[0]
@@ -39,7 +37,7 @@ def test_log_file_created_and_entry_appended():
         assert row["inserted_rows"] == "10000"
         assert row["reject_count"] == "0"
 
-def test_multiple_entries_append_correctly():
+def test_multiple_entries_append_correctly(temp_log_path):
     now = datetime.now(timezone.utc)
     for i in range(3):
         entry = ingestion_log.create_log_entry(
@@ -54,8 +52,9 @@ def test_multiple_entries_append_correctly():
         )
         ingestion_log.log_ingestion_entry(entry)
 
-    with open(INGESTION_LOG_PATH, newline="") as f:
+    with open(temp_log_path, newline="") as f:
         reader = list(csv.DictReader(f))
         assert len(reader) == 3
         assert reader[0]["file_name"] == "file_0.csv"
         assert reader[2]["file_name"] == "file_2.csv"
+        

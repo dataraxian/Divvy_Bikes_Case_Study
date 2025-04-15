@@ -6,7 +6,8 @@ from datetime import datetime, timezone
 import duckdb
 
 from s3_divvy import core, metadata, processing, ingestion_log
-from s3_divvy.config import EXTRACT_DIR, QUALITY_CHECK_MODE, DUCKDB_PATH
+from . import config
+# from s3_divvy.config import EXTRACT_DIR, QUALITY_CHECK_MODE, DUCKDB_PATH
 
 logging.basicConfig(level=logging.INFO)
 
@@ -19,7 +20,7 @@ def find_first_csv(directory):
 
 
 def run(mode="duckdb", quality_check=None):
-    qc_mode = quality_check if quality_check is not None else QUALITY_CHECK_MODE
+    qc_mode = quality_check if quality_check is not None else config.QUALITY_CHECK_MODE
     current_df = core.list_s3_files()
     if current_df.empty:
         logging.info("No files to process.")
@@ -34,7 +35,7 @@ def run(mode="duckdb", quality_check=None):
         if not zip_path:
             continue
 
-        extract_path = os.path.join(EXTRACT_DIR, file_name.replace(".zip", ""))
+        extract_path = os.path.join(config.EXTRACT_DIR, file_name.replace(".zip", ""))
         os.makedirs(extract_path, exist_ok=True)
         core.extract_zip(zip_path, extract_path)
         core.save_file_hash(zip_path)
@@ -61,7 +62,7 @@ def run(mode="duckdb", quality_check=None):
     else:
         for _, row in files_to_process.iterrows():
             file_name = row["file_name"]
-            extract_path = os.path.join(EXTRACT_DIR, file_name.replace(".zip", ""))
+            extract_path = os.path.join(config.EXTRACT_DIR, file_name.replace(".zip", ""))
             csv_path = find_first_csv(extract_path)
             if not csv_path:
                 logging.warning(f"No CSV found in {extract_path}, skipping")
@@ -78,7 +79,7 @@ def run(mode="duckdb", quality_check=None):
             status = "success"
 
             if result is True:
-                with duckdb.connect(DUCKDB_PATH) as con:
+                with duckdb.connect(config.DUCKDB_PATH) as con:
                     inserted_rows = con.execute(f"""
                         SELECT COUNT(*) FROM trips WHERE source_file = '{base_name}'
                     """).fetchone()[0]

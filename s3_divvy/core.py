@@ -8,14 +8,15 @@ from botocore.exceptions import NoCredentialsError
 import boto3
 import pandas as pd
 from datetime import datetime
-from .config import S3_BUCKET, DOWNLOAD_DIR, EXTRACT_DIR, HASH_DIR, USE_BOTO3_DOWNLOAD
+from . import config
+# from .config import S3_BUCKET, DOWNLOAD_DIR, EXTRACT_DIR, HASH_DIR, USE_BOTO3_DOWNLOAD
 
 logger = logging.getLogger(__name__)
 s3_client = boto3.client("s3")
 
 def list_s3_files():
     try:
-        response = s3_client.list_objects_v2(Bucket=S3_BUCKET)
+        response = s3_client.list_objects_v2(Bucket=config.S3_BUCKET)
         if "Contents" not in response:
             logger.warning("No contents in S3 bucket.")
             return pd.DataFrame()
@@ -38,8 +39,8 @@ def list_s3_files():
         return pd.DataFrame()
 
 def download_file(file_name: str):
-    file_url = f"https://{S3_BUCKET}.s3.amazonaws.com/{file_name}"
-    local_path = os.path.join(DOWNLOAD_DIR, file_name)
+    file_url = f"https://{config.S3_BUCKET}.s3.amazonaws.com/{file_name}"
+    local_path = os.path.join(config.DOWNLOAD_DIR, file_name)
 
     if os.path.exists(local_path):
         logger.info(f"File already exists: {file_name}")
@@ -67,7 +68,7 @@ def extract_zip(file_path: str, extract_to: str):
         logger.error(f"Failed to extract {file_path}: {e}")
 
 def save_file_hash(file_path: str):
-    hash_path = os.path.join(HASH_DIR, os.path.basename(file_path) + ".sha256")
+    hash_path = os.path.join(config.HASH_DIR, os.path.basename(file_path) + ".sha256")
     sha256 = hashlib.sha256()
     with open(file_path, 'rb') as f:
         for chunk in iter(lambda: f.read(4096), b""):
@@ -75,4 +76,3 @@ def save_file_hash(file_path: str):
     with open(hash_path, 'w') as hash_file:
         hash_file.write(sha256.hexdigest())
     logger.info(f"Hash saved: {hash_path}")
-    
