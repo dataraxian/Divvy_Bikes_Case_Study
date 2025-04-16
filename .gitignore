@@ -13,3 +13,4 @@ data/
 logs/
 s3_divvy/metadata_v2.py
 s3_divvy/s3_bucket_exploration.py
+
