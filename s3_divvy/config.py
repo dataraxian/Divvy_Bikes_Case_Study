@@ -1,27 +1,35 @@
 ### config.py
 import os
+from dotenv import load_dotenv
 
-# Bucket configuration
-S3_BUCKET = os.getenv("S3_BUCKET", "divvy-tripdata")
+# Root project directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Directory settings
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "..", "data")
-DOWNLOAD_DIR = os.path.join(DATA_DIR, "zip")
-EXTRACT_DIR = os.path.join(DATA_DIR, "csv")
-HASH_DIR = os.path.join(DATA_DIR, "hash")
-DUCKDB_PATH = os.path.join(DATA_DIR, "divvy.duckdb")
+# Load environment variables from .env at root
+load_dotenv(dotenv_path=os.path.join(BASE_DIR, ".env"))
 
-# Download method
-USE_BOTO3_DOWNLOAD = os.getenv("USE_BOTO3_DOWNLOAD", "false").lower() == "true"
+# S3
+S3_BUCKET = os.getenv("S3_BUCKET", "divvy-tripdata")  # fallback default
 
-# Metadata + Logging paths
-METADATA_PATH = os.path.join(BASE_DIR, "..", "metadata", "file_metadata.csv")
-INGESTION_LOG_PATH = os.path.join(os.path.dirname(METADATA_PATH), "file_ingestion_log.csv")
+# Data storage
+DOWNLOAD_DIR = os.getenv("DOWNLOAD_DIR", os.path.join(BASE_DIR, "data", "zip"))
+EXTRACT_DIR = os.getenv("EXTRACT_DIR", os.path.join(BASE_DIR, "data", "csv"))
+HASH_DIR = os.getenv("HASH_DIR", os.path.join(BASE_DIR, "data", "hash"))
+ROLLBACK_DIR = os.getenv("ROLLBACK_DIR", os.path.join(BASE_DIR, "data", "rollback"))
 
-# Create directories if not present
-for directory in [DOWNLOAD_DIR, EXTRACT_DIR, HASH_DIR, os.path.dirname(METADATA_PATH), os.path.dirname(INGESTION_LOG_PATH)]:
-    os.makedirs(directory, exist_ok=True)
+# Metadata & logs
+METADATA_TABLE = "file_metadata"
+DOWNLOAD_LOG_TABLE = "download_log"
+ROLLBACK_LOG_TABLE = "rollback_log"
+INGESTION_LOG_TABLE = "ingestion_log"
+DUPLICATE_LOG_TABLE = "duplicate_log"
 
-# MODE
-QUALITY_CHECK_MODE = os.getenv("QUALITY_CHECK_MODE", "false").lower() == "true"
+# Database paths
+DUCKDB_PATH = os.getenv("DUCKDB_PATH", os.path.join(BASE_DIR, "data", "warehouse.duckdb"))
+LOG_DB_PATH = os.getenv("LOG_DB_PATH", os.path.join(BASE_DIR, "data", "logs.duckdb"))
+
+# Pipeline behavior
+QUALITY_CHECK_MODE = os.getenv("QUALITY_CHECK_MODE", "True").lower() in ("true", "1", "yes")
+
+# Dummy constant
+DUMMY_CONSTANT = "dummy_constant"
